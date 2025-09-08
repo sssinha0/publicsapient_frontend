@@ -1,59 +1,163 @@
-# Demo
+Got it 🚀 You want a **professional README.md** for your **Angular + NgRx + Material + Tailwind** recipe app.
+I’ll generate a full **developer-friendly, demo-ready README** including:
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.8.
+* 📖 Project overview
+* ⚡ Features (filters, details, random search, get recipe by id, etc.)
+* 🏗️ Tech stack (Angular, NgRx, Material, Tailwind)
+* 📂 Project structure
+* ▶️ Run instructions
+* 🖼️ Screenshots + 🎥 Demo video placeholders
+* 📌 Future enhancements
 
-## Development server
+Here’s a ready README.md ⬇️
 
-To start a local development server, run:
+---
+
+# 🍲 Recipe Finder App
+
+An advanced **Angular 19** application for searching, filtering, and exploring recipes.
+Built with **NgRx for state management**, **Angular Material for UI components**, and **Tailwind CSS for styling**.
+
+---
+
+## 🚀 Features
+
+* 🔍 **Search Recipes** by name or keyword
+* 🎲 **Random Recipe Search** – surprise me!
+* 🥗 **Filters**:
+
+  * Cooking time (`<15 min`, `15–30`, `30–60`, `60+`)
+  * Meal type (`Breakfast`, `Lunch`, `Dinner`, etc.)
+  * Cuisine (`Indian`, `Italian`, `Mexican`, etc.)
+  * Minimum rating (⭐ 1–5)
+* 📊 **Sorting** (Relevance, Rating High→Low, Prep Time Low→High)
+* 📄 **Recipe Details Screen** (view ingredients, steps, nutrition, reviews)
+* 🛠️ **State Management with NgRx**:
+
+  * Store all recipes globally
+  * Fetch by **ID**
+  * Select filtered results using selectors
+* ⚡ **Optimized Filters** – multiple filters can work together
+* 📱 **Responsive UI** using Tailwind (mobile-first, grid for large screens)
+* 🧭 **Back Navigation** with router integration
+* 🌀 **Loading Spinner** while fetching data
+
+---
+
+## 🛠️ Tech Stack
+
+* [Angular 19](https://angular.io/) – framework
+* [NgRx](https://ngrx.io/) – state management
+* [Angular Material](https://material.angular.io/) – UI components
+* [Tailwind CSS](https://tailwindcss.com/) – responsive styling
+* RxJS – reactive programming
+* REST API (Spring Boot backend with Hibernate Search + H2 DB)
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+├── app/
+│   ├── store/                # NgRx store (actions, reducers, selectors, effects)
+│   ├── services/             # API services (RecipeService)
+│   ├── components/
+│   │   ├── search-page/      # Search & filter screen
+│   │   ├── recipe-card/      # Recipe preview card
+│   │   ├── recipe-details/   # Recipe detail screen
+│   │   └── shared/           # Shared UI components (spinner, header, footer)
+│   └── app.module.ts
+├── assets/                   # Static files (images, demo videos)
+└── styles.css                # Tailwind base styles
+```
+
+---
+
+## ▶️ Getting Started
+
+### 1. Clone repo
+
+```bash
+git clone https://github.com/your-username/recipe-finder-app.git
+cd recipe-finder-app
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Run Angular app
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+App runs on: **[http://localhost:4200](http://localhost:4200)**
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## ⚡ NgRx State Flow
 
-```bash
-ng generate component component-name
-```
+* **Actions**
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+  * `loadRecipes`, `loadRecipeById`, `searchRandomRecipe`, `applyFilters`
+* **Effects**
 
-```bash
-ng generate --help
-```
+  * Call backend API and dispatch success/failure actions
+* **Reducers**
 
-## Building
+  * Update state (`recipes`, `selectedRecipe`, `loading`)
+* **Selectors**
 
-To build the project run:
+  * `selectAllRecipes`, `selectRecipeById`, `selectFilteredRecipes`
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 🖼️ Screenshots
 
-## Running unit tests
+### 🔍 Search & Filters
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+![Search Filters Screenshot](./assets/screenshots/search-filters.png)
 
-```bash
-ng test
-```
+### 📄 Recipe Details
 
-## Running end-to-end tests
+![Recipe Details Screenshot](./assets/screenshots/recipe-details.png)
 
-For end-to-end (e2e) testing, run:
+---
 
-```bash
-ng e2e
-```
+## 🎥 Demo Video
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+📹 [Watch Demo Video](./assets/demo/recipe-app-demo.mp4)
+*(Add a screen recording using [OBS](https://obsproject.com/) or [Loom](https://www.loom.com/))*
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 🧩 Future Enhancements
+
+* 🛒 Add "Save to Favorites" with NgRx Entity
+* 👨‍🍳 User authentication & personal recipe collection
+* 📤 Share recipe via social links/email
+* 🔔 Push notifications for new recipes
+* 🌐 Multi-language support
+
+---
+
+## 🤝 Contributing
+
+1. Fork this repo
+2. Create a branch (`feature/awesome-filter`)
+3. Commit changes
+4. Push & create a PR
+
+---
+
+## 📜 License
+
+MIT © 2025 – Recipe Finder Project
+
+---
+
+👉 Do you want me to also **generate the NgRx store code (actions, reducer, selector, effect)** for recipes so that the README matches the actual implementation?
