@@ -1,0 +1,138 @@
+<div class="flex justify-center items-center mt-8" *ngIf="loading">
+  <mat-progress-spinner mode="indeterminate" diameter="50" color="primary">
+  </mat-progress-spinner>
+</div>
+<div class="min-h-screen relative overflow-hidden">
+  <!-- Background gradient -->
+  <div class="absolute inset-0 bg-gradient-to-b from-rose-50 via-orange-50 to-amber-50"></div>
+  <!-- Decorative blur orbs -->
+  <div class="pointer-events-none absolute -top-28 -left-28 h-80 w-80 rounded-full bg-rose-300/30 blur-3xl"></div>
+  <div class="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-amber-300/30 blur-3xl">
+  </div>
+
+  <main class="relative z-10">
+
+    <!-- Hero banner -->
+    <section class="max-w-7xl mx-auto px-4 pt-8">
+      <div class="grid lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-3">
+          <button (click)="goBack()"
+            class="flex items-center gap-2 mb-4 px-4 py-2 rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-700 shadow transition">
+            <mat-icon>arrow_back</mat-icon>
+            Back
+          </button>
+          <div class="bg-white/80 backdrop-blur-xl ring-1 ring-slate-200 rounded-3xl p-6 shadow-xl">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <div
+                  class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/70 ring-1 ring-slate-200 shadow-sm mb-3">
+                  <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+                  <span class="text-xs font-medium text-slate-700">Enhanced search & filters</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">
+                  Explore tasty results
+                </h1>
+                <p class="mt-2 text-slate-600">
+                  Refine by prep time, meal type, or cuisine. Sort for speed or ratings.
+                </p>
+              </div>
+              <div class="hidden md:block">
+                <img src="https://images.unsplash.com/photo-1526318472351-c75fcf070305?q=80&w=1200&auto=format&fit=crop"
+                  alt="Fresh ingredients" class="w-48 h-28 object-cover rounded-2xl ring-1 ring-slate-200 shadow-md">
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="flex flex-col gap-3 lg:flex-row lg:items-end lg:flex-wrap xl:flex-nowrap">
+          <!-- Cooking time -->
+          <div class="flex-1 min-w-[200px]">
+            <label class="block text-sm font-medium mb-2">Cooking time</label>
+            <mat-chip-listbox [(ngModel)]="filters.cookTime" name="cookTime" multiple="false"
+              class="flex flex-wrap gap-2" (change)="onCookTimeChange($event)">
+              <mat-chip-option [value]="'ANY'">Any</mat-chip-option>
+              <mat-chip-option [value]="'LT_15'">Under 15 min</mat-chip-option>
+              <mat-chip-option [value]="'15_30'">15–30 min</mat-chip-option>
+              <mat-chip-option [value]="'30_60'">30–60 min</mat-chip-option>
+              <mat-chip-option [value]="'GT_60'">60+ min</mat-chip-option>
+            </mat-chip-listbox>
+          </div>
+
+          <!-- Meal type -->
+          <div class="flex-1 min-w-[200px]">
+            <label class="block text-sm font-medium mb-2">Meal type</label>
+            <mat-chip-listbox multiple [(ngModel)]="filters.mealTypes" name="mealTypes" class="flex flex-wrap gap-2"
+              (change)="onMealTypesChange($event)">
+              <mat-chip-option *ngFor="let t of mealTypes" [value]="t">{{ t }}</mat-chip-option>
+            </mat-chip-listbox>
+          </div>
+
+          <!-- Cuisine -->
+          <div class="flex-1 min-w-[200px]">
+            <mat-form-field class="w-full">
+            <label class="block text-sm font-medium mb-2">Cuisine</label>
+            <mat-select [(ngModel)]="filters.cuisine" name="cuisine" placeholder="Any" class="w-full"
+              (selectionChange)="onCuisineChange($event)">
+              <mat-option [value]="'ANY'">Any</mat-option>
+              <mat-option *ngFor="let c of cuisines" [value]="c">{{ c }}</mat-option>
+            </mat-select>
+            </mat-form-field>
+          </div>
+
+          <!-- Rating -->
+          <div class="flex-1 min-w-[200px]">
+            <label class="block text-sm font-medium mb-2">Min rating</label>
+            <div class="flex items-center gap-1">
+              <button type="button" class="p-1" (click)="setMinRating(1)">
+                <mat-icon [ngClass]="rating>=1 ? 'text-amber-500' : 'text-slate-300'">star</mat-icon>
+              </button>
+              <button type="button" class="p-1" (click)="setMinRating(2)">
+                <mat-icon [ngClass]="rating>=2 ? 'text-amber-500' : 'text-slate-300'">star</mat-icon>
+              </button>
+              <button type="button" class="p-1" (click)="setMinRating(3)">
+                <mat-icon [ngClass]="rating>=3 ? 'text-amber-500' : 'text-slate-300'">star</mat-icon>
+              </button>
+              <button type="button" class="p-1" (click)="setMinRating(4)">
+                <mat-icon [ngClass]="rating>=4 ? 'text-amber-500' : 'text-slate-300'">star</mat-icon>
+              </button>
+              <button type="button" class="p-1" (click)="setMinRating(5)">
+                <mat-icon [ngClass]="rating>=5 ? 'text-amber-500' : 'text-slate-300'">star</mat-icon>
+              </button>
+              <button type="button" class="ml-2 text-xs text-slate-600 underline"
+                (click)="setMinRating(0)">Clear</button>
+            </div>
+          </div>
+
+          <!-- Sort -->
+          <div class="flex-1 min-w-[200px]">
+            <mat-form-field class="w-full">
+            <label class="block text-sm font-medium mb-2">Sort</label>
+            <mat-select [(ngModel)]="sort" name="sort" class="w-full" (selectionChange)="onSortChange()">
+              <mat-option value="relevance">Relevance</mat-option>
+              <mat-option value="ratingDesc">Rating (high)</mat-option>
+              <mat-option value="prepAsc">Prep time (low)</mat-option>
+            </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="max-w-7xl mx-auto px-4 py-6">
+      <div class="flex items-center justify-between mb-3">
+        <div class="text-sm text-slate-600">{{(filtered$?.numberOfElements) ?? 0}} results</div>
+      </div>
+      <!-- Elegant responsive grid with cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <app-recipe-card *ngFor="let r of filtered$?.content" [recipe]="r"></app-recipe-card>
+      </div>
+    </section>
+  </main>
+</div>

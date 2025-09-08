@@ -1,0 +1,6 @@
+::ng-deep .mat-icon.text-amber-500 {
+  color: rgb(245 158 11) !important; /* Tailwind amber-500 */
+}
+::ng-deep .mat-icon.text-slate-300 {
+  color: rgb(203 213 225) !important; /* Tailwind slate-300 */
+}

@@ -1,0 +1,82 @@
+<div class="min-h-screen relative overflow-hidden">
+  <!-- Gradient background -->
+  <div class="absolute inset-0 bg-gradient-to-b from-rose-50 via-orange-50 to-amber-50"></div>
+
+  <!-- Decorative blur orbs -->
+  <div class="pointer-events-none absolute -top-32 -left-32 h-80 w-80 rounded-full bg-rose-300/30 blur-3xl"></div>
+  <div class="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-amber-300/30 blur-3xl"></div>
+
+  <main class="relative z-10">
+    <section class="max-w-6xl mx-auto px-4 py-16 lg:py-24 grid lg:grid-cols-2 gap-10 items-center">
+      <!-- Left: copy + search -->
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/70 backdrop-blur ring-1 ring-slate-200 shadow-sm mb-5">
+          <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+          <span class="text-xs font-medium text-slate-700">Fresh & fast recipe search</span>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+          Discover delicious recipes instantly
+        </h1>
+        <p class="mt-4 text-lg text-slate-600">
+          Search by name or cuisine, then refine by prep time and meal type. Cook smarter with a clean, modern UI.
+        </p>
+
+        <form (ngSubmit)="submit()" class="mt-8 bg-white/80 backdrop-blur-xl ring-1 ring-slate-200 rounded-2xl p-3 shadow-lg">
+          <div class="flex items-center gap-2">
+            <mat-form-field appearance="outline" class="flex-1 !bg-transparent">
+              <mat-icon matPrefix>search</mat-icon>
+              <input matInput placeholder="Try “Paneer Tikka”, “Italian”, “Breakfast”" [(ngModel)]="q" name="q" (keyup.enter)="submit()">
+              <button mat-icon-button matSuffix aria-label="Clear">
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-form-field>
+            <button mat-flat-button color="primary" class="px-6">Search</button>
+          </div>
+
+          <!-- Quick filters preview -->
+          <div class="mt-3 flex flex-wrap gap-2">
+            <button type="button" mat-stroked-button color="primary" class="!rounded-full" (click)="quick('15min')">
+              <mat-icon class="!text-base">schedule</mat-icon>&nbsp;≤ 15 min
+            </button>
+            <button type="button" mat-stroked-button class="!rounded-full" (click)="quick('breakfast')">
+              <mat-icon class="!text-base">restaurant</mat-icon>&nbsp;Breakfast
+            </button>
+            <button type="button" mat-stroked-button class="!rounded-full" (click)="quick('italian')">
+              <mat-icon class="!text-base">local_pizza</mat-icon>&nbsp;Italian
+            </button>
+          </div>
+        </form>
+
+        <!-- Trust row -->
+        <div class="mt-6 flex items-center gap-6 text-slate-500">
+          <div class="flex items-center gap-2">
+            <mat-icon>star</mat-icon><span>Curated results</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <mat-icon>bolt</mat-icon><span>Fast filters</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <mat-icon>security</mat-icon><span>Privacy-first</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: hero image card -->
+      <div class="relative">
+        <div class="bg-white/70 backdrop-blur-xl ring-1 ring-slate-200 rounded-3xl shadow-xl overflow-hidden">
+          <div class="relative">
+            <img
+              src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1400&auto=format&fit=crop"
+              alt="Tasty dishes"
+              class="w-full h-80 md:h-[28rem] object-cover">
+            <!-- Overlay label -->
+            <div class="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded-full text-xs">
+              Trending: Mediterranean • 30m
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
