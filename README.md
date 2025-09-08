@@ -51,8 +51,6 @@ src/
 │   │   ├── search-page/      # Search & filter screen
 │   │   ├── recipe-card/      # Recipe preview card
 │   │   ├── recipe-details/   # Recipe detail screen
-│   │   └── shared/           # Shared UI components (spinner, header, footer)
-│   └── app.module.ts
 ├── assets/                   # Static files (images, demo videos)
 └── styles.css                # Tailwind base styles
 ```
@@ -104,12 +102,14 @@ App runs on: **[http://localhost:4200](http://localhost:4200)**
 ## 🖼️ Screenshots
 
 ### 🔍 Search & Filters
+ <img width="1356" height="659" alt="Screenshot from 2025-09-08 10-06-17" src="https://github.com/user-attachments/assets/e7e11571-8a8e-41ef-aaaa-c89e5abfbfd5" />
+<img width="1356" height="659" alt="Screenshot from 2025-09-08 10-07-22" src="https://github.com/user-attachments/assets/d49ac270-8a5a-4ec7-bfed-7e20c6934d6a" />
+<img width="1356" height="659" alt="Screenshot from 2025-09-08 10-07-09" src="https://github.com/user-attachments/assets/657e57ed-bebf-46e3-ae5e-8fd2c178c95c" />
 
-![Search Filters Screenshot](./assets/screenshots/search-filters.png)
 
 ### 📄 Recipe Details
 
-![Recipe Details Screenshot](./assets/screenshots/recipe-details.png)
+  <img width="1356" height="659" alt="Screenshot from 2025-09-08 10-07-27" src="https://github.com/user-attachments/assets/bd7c437b-064e-4aff-8c05-5d8068a1b32c" />
 
 ---
 
@@ -120,11 +120,14 @@ App runs on: **[http://localhost:4200](http://localhost:4200)**
 
 ---
 
-## 🧩 Future Enhancements
+## 🧩 Future Enhancements<img width="1356" height="659" alt="Screenshot from 2025-09-08 10-04-28" src="https://github.com/user-attachments/assets/340a23c9-e0fa-4c15-9f29-584df08f3536" />
+
 
 * 🛒 Add "Save to Favorites" with NgRx Entity
 * 👨‍🍳 User authentication & personal recipe collection
 * 📤 Share recipe via social links/email
+ 
+
 * 🔔 Push notifications for new recipes
 * 🌐 Multi-language support
 
@@ -144,5 +147,3 @@ App runs on: **[http://localhost:4200](http://localhost:4200)**
 MIT © 2025 – Recipe Finder Project
 
 ---
-
-👉 Do you want me to also **generate the NgRx store code (actions, reducer, selector, effect)** for recipes so that the README matches the actual implementation?
