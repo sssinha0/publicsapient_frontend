@@ -1,18 +1,3 @@
-Got it 🚀 You want a **professional README.md** for your **Angular + NgRx + Material + Tailwind** recipe app.
-I’ll generate a full **developer-friendly, demo-ready README** including:
-
-* 📖 Project overview
-* ⚡ Features (filters, details, random search, get recipe by id, etc.)
-* 🏗️ Tech stack (Angular, NgRx, Material, Tailwind)
-* 📂 Project structure
-* ▶️ Run instructions
-* 🖼️ Screenshots + 🎥 Demo video placeholders
-* 📌 Future enhancements
-
-Here’s a ready README.md ⬇️
-
----
-
 # 🍲 Recipe Finder App
 
 An advanced **Angular 19** application for searching, filtering, and exploring recipes.
