@@ -115,7 +115,7 @@ App runs on: **[http://localhost:4200](http://localhost:4200)**
 ---
 
 ## 🎥 Demo Video
-
+[Screencast from 2025-09-08 10-11-31.webm](https://github.com/user-attachments/assets/c624cfb0-c635-48a6-8966-106576de0d31)
 ---
 
 ## 🧩 Future Enhancements
@@ -133,8 +133,7 @@ App runs on: **[http://localhost:4200](http://localhost:4200)**
 
 ## 🤝 Contributing
 
-1. Fork this repo[Screencast from 2025-09-08 10-11-31.webm](https://github.com/user-attachments/assets/c624cfb0-c635-48a6-8966-106576de0d31)
-
+1. Fork this repo
 2. Create a branch (`feature/awesome-filter`)
 3. Commit changes
 4. Push & create a PR
